@@ -1,0 +1,82 @@
+:root{
+  --bg:#fff;
+  --fg:#000;
+  --muted:#666;
+  --card:#f6f6f6;
+  font-family: "Noto Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--fg);
+  min-height:100vh;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  padding:24px;
+}
+#app{
+  width:1100px;
+  max-width:100%;
+}
+header h1{
+  margin:0 0 12px 0;
+  font-size:20px;
+  letter-spacing:0.2px;
+}
+main{
+  display:grid;
+  grid-template-columns: 420px 1fr;
+  gap:20px;
+}
+.controls{
+  background:var(--card);
+  padding:16px;
+  border-radius:8px;
+  max-height: calc(100vh - 160px);
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.preview{
+  background:var(--card);
+  padding:16px;
+  border-radius:8px;
+}
+.clips h2, .mix h2, .preview h2{margin:0 0 10px 0;font-size:16px}
+.clip-list{display:flex;flex-direction:column;gap:8px}
+.clip{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  padding:8px;
+  background:white;
+  border-radius:6px;
+  border:1px solid #e8e8e8;
+}
+.clip button{margin-left:auto}
+.track{min-height:120px;padding:8px;background:#fff;border-radius:6px;border:1px dashed #ddd;display:flex;flex-direction:column;gap:8px}
+.track .track-item{display:flex;gap:8px;align-items:center;padding:6px;border-radius:6px;background:#fafafa;border:1px solid #eee}
+.track input[type="range"]{width:120px}
+.mix-controls{display:flex;gap:8px;align-items:center;margin-top:12px}
+.mix-controls input[type="range"]{width:140px}
+.mix-controls label{font-size:13px;color:var(--muted)}
+.preview-area{display:flex;gap:12px;align-items:center}
+.preview-area{
+  max-height: calc(100vh - 220px);
+  overflow: auto;
+  padding: 8px;
+}
+canvas{background:#000;border-radius:6px;width:360px;height:360px;display:block}
+audio{width:100%}
+footer{margin-top:12px;color:var(--muted);font-size:13px}
+button{background:#111;color:#fff;border:0;padding:8px 10px;border-radius:6px;cursor:pointer;font-weight:600}
+button[disabled]{opacity:.5;cursor:default}
+input[type="number"]{width:80px;padding:6px;border-radius:6px;border:1px solid #ddd}
+input[type="color"]{padding:0;border:0;background:transparent}
+small{color:var(--muted)}
+.triggers{margin-top:12px;background:#fff;padding:10px;border-radius:6px;border:1px solid #eee}
+.triggers h2{margin:0 0 8px 0;font-size:14px}
+.trigger-list{display:flex;flex-wrap:wrap;gap:8px}
+.trigger-btn{background:#0b6394;color:#fff;border:0;padding:8px 10px;border-radius:6px;cursor:pointer;font-weight:600;font-size:13px}
+.trigger-btn:active{transform:translateY(1px);opacity:0.95}

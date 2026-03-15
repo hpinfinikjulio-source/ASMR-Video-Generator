@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ASMR Video Generator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>ASMR Video Generator</h1>
+    </header>
+
+    <main>
+      <section class="controls">
+        <div class="clips">
+          <h2>Clips</h2>
+          <div class="clip-list" id="clipList">
+            <!-- populated by JS -->
+          </div>
+        </div>
+
+        <div class="triggers">
+          <h2>Triggers</h2>
+          <div class="trigger-list" id="triggerList">
+            <!-- trigger buttons added by JS -->
+          </div>
+        </div>
+
+        <div class="mix">
+          <h2>Mix</h2>
+          <div class="track" id="trackContainer">
+            <!-- active clips go here -->
+          </div>
+
+          <div class="mix-controls">
+            <label>Length (s): <input id="duration" type="number" min="5" value="20" /></label>
+            <label>Canvas BG: <input id="bgColor" type="color" value="#000000" /></label>
+            <label>Master Vol: <input id="masterVol" type="range" min="0" max="1" step="0.01" value="0.9" /></label>
+            <button id="previewBtn">Preview Mix</button>
+            <button id="exportBtn">Export Video (webm)</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="preview">
+        <h2>Preview</h2>
+        <div class="preview-area">
+          <canvas id="vis" width="720" height="720"></canvas>
+          <audio id="masterAudio" controls></audio>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <small>Simple ASMR video generator — mix clips, preview and export.</small>
+    </footer>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
